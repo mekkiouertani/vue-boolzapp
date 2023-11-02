@@ -27,25 +27,6 @@
     background: var(--background);
     padding: 20px;
 }
-.msg{
-    text-align: right;
-    padding: 15px 30px 15px 10px;
-    border-radius: 5px;
-}
-.sent{
-    background-color: var(--color-sent-message);
-}
-.received{
-
-    background-color: var(--color-white);
-}
-.date{
-    font-size: 10px;
-    bottom: 0;
-    right: 5px;
-    
-}
-
 
 
 /*  ---------------
@@ -115,4 +96,32 @@
 } 
 #bottom-bar input{
     height: 40px;
+}
+
+/* MESSAGGI */
+.msg{
+    text-align: right;
+    padding: 15px 30px 15px 10px;
+    border-radius: 5px;
+}
+.sent{
+    background-color: var(--color-sent-message);
+}
+.received{
+
+    background-color: var(--color-white);
+}
+.date{
+    font-size: 10px;
+    bottom: 0;
+    right: 5px;
+    
+}
+/* CURSOR POINTER */
+a, li, i, .box-avatar img{
+    cursor: pointer;
+}
+/* HOVER */
+#left-bar li:hover{
+    background-color: var(--color-contact-hover);
 }
