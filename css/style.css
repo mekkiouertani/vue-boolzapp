@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 :root {
 	--color-white: #ffffff;
 	--color-dark-text: #161012;
@@ -17,14 +27,12 @@
     background: var(--background);
     padding: 20px;
 }
-ul{
-    list-style: none;
-}
 
 /*  ---------------
         LEFT BAR */
 #left-bar{
     background-color: var(--color-white);
+    max-height: 100%;
 }
 /* TOPBAR LEFT */
 #left-bar .col-12:first-child{
@@ -34,16 +42,24 @@ ul{
 /* SEZIONE NOTIFICHE */
 #left-bar .col-12:nth-child(2){
     background-color: var(--color-notification);
+    height: 70px;
 }
 /* BARRA DI RICERCA */
 #left-bar .col-12:nth-child(3){
     background-color: var(--color-headers);
+    height: 50px;
 }
 /* CONTATTI */
+#left-bar .col-12:last-child{
+    max-height: calc(100% - 190px);
+}
 #left-bar .col-12 input{
     margin: 5px;
 }
-
+#left-bar ul{
+    list-style: none;
+    overflow-y: auto;
+}
 .box-avatar{
     width: 70px;
     height: 70px;

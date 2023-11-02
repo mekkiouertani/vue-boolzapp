@@ -5,6 +5,8 @@ const { createApp } = Vue
         data(){
             return{
                 contacts: contactList,
+                activeContact: 0,
+                
             }
         },
         methods: {
@@ -14,6 +16,6 @@ const { createApp } = Vue
 
         },
         mounted(){
-             
+             console.log(this.contacts);
         }
     }).mount('#app')
