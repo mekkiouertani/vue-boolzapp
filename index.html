@@ -92,18 +92,45 @@
                     <div class="row h-100 align-content-between">
 
                         <!-- top-bar RIGHT -->
-                        <div class="col-12">
-                            topbar right
+                        <div class="col-12 d-flex justify-content-between align-items-center">
+                            
+                            <div class="d-flex mt-3">
+                                <div class="box-avatar topbar">
+                                    <img :src="contacts[0].avatar" :alt="contacts.name">
+                                </div>
+                                <div class="mx-2">
+                                    <h5 class="mt-2 fw-bolder m-0">{{contacts[0].name}}</h5>
+                                    <p class="text-secondary">Ultimo accesso</p>
+                                </div>
+                            </div>
+                            
+                            <div class="icon-topbar fs-4 text-secondary">
+                                <i class="fa-solid fa-magnifying-glass px-2"></i>
+                                <i class="fa-solid fa-paperclip px-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical px-2"></i>
+                            </div>
                         </div>
 
                         <!-- lettura messaggi -->
-                        <div class="col-12 flex-grow-1">
-                            lettura messaggi
+                        <div class="col-12 flex-grow-1 overflow-y-auto p-5 d-flex justify-content-between">
+                            <div class="mt-5 ">
+                                <span class="received position-relative msg">lorem
+                                    <span class="position-absolute date text-secondary">orario</span>
+                                </span>
+                                
+                            </div>
+                            <div>
+                                <span class="sent position-relative msg">lorem
+                                    <span class="position-absolute date text-secondary">orario</span>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- bottom-bar RIGHT-->
-                        <div class="col-12">
-                            bottom bar
+                        <div id="bottom-bar" class="col-12 d-flex align-items-center">
+                            <i class="fa-regular fa-face-smile fs-3 mx-3 text-secondary"></i>
+                            <input type="text" class="flex-grow-1" placeholder=" Scrivi un messaggio">
+                            <i class="fa-solid fa-paper-plane fs-3 mx-3 text-secondary"></i>
                         </div>
 
                     </div>

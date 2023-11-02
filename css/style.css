@@ -27,6 +27,26 @@
     background: var(--background);
     padding: 20px;
 }
+.msg{
+    text-align: right;
+    padding: 15px 30px 15px 10px;
+    border-radius: 5px;
+}
+.sent{
+    background-color: var(--color-sent-message);
+}
+.received{
+
+    background-color: var(--color-white);
+}
+.date{
+    font-size: 10px;
+    bottom: 0;
+    right: 5px;
+    
+}
+
+
 
 /*  ---------------
         LEFT BAR */
@@ -39,7 +59,7 @@
     background-color: var(--color-headers);
     height: 70px;
 }
-#left-bar .box-avatar.topbar{
+.box-avatar.topbar{
     height: 50px;
     width: 50px;    
 
@@ -78,6 +98,9 @@
 
 /*  ----------------
         RIGHT BAR */
+#right-content{
+    max-height: 100%;
+}
 #right-content .col-12:last-child, #right-content  .col-12:first-child{
     background-color: var(--color-headers);
     border-left: 1px solid var(--color-text-grey);
@@ -90,3 +113,6 @@
     background-size: cover;
     background-position: center;
 } 
+#bottom-bar input{
+    height: 40px;
+}
