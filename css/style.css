@@ -17,19 +17,30 @@
     background: var(--background);
     padding: 20px;
 }
-#right-bar{
+
+
+/*  ---------------
+        LEFT BAR */
+#left-bar{
     background-color: var(--color-white);
     width: 100;
 }
-#right-bar .col-12:first-child{
+#left-bar .col-12:first-child{
     background-color: var(--color-headers);
 }
-#right-bar .col-12:nth-child(2){
+#left-bar .col-12:nth-child(2){
     background-color: var(--color-notification);
 }
-#right-bar .col-12:nth-child(3){
+#left-bar .col-12:nth-child(3){
     background-color: var(--color-headers);
 }
-#right-bar .col-12 input{
+#left-bar .col-12 input{
     margin: 5px;
+}
+
+/*  ----------------
+        RIGHT BAR */
+#right-content .col-12:last-child, #right-content  .col-12:first-child{
+    background-color: var(--color-headers);
+    border-left: 1px solid var(--color-text-grey);
 }
