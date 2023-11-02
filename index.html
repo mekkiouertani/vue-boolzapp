@@ -44,7 +44,7 @@
                                 
                                 <li v-for="(contact, index) in contacts" class="d-flex border-bottom p-2">
                                     <div class="box-avatar">
-                                        <img :src="contact.avatar" alt="">
+                                        <img :src="contact.avatar" :alt="contact.name">
                                     </div>
 
                                     <div class="mx-2">
