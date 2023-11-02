@@ -14,8 +14,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app">
+    <div id="app" tabindex="0">
         
+        <div class="container border h-100">
+            <div class="row h-100">
+                
+                <!-- COL SINISTRA -->
+                <div id="right-bar" class="col-12 col-md-4">
+                    <div class="row h-100 flex-column">
+                        <div class="col-12">topbar-left</div>
+                        <div class="col-12">notifica</div>
+                        <div class="col-12"><input type="text"></div>
+                        <div class="col-12">contacts</div>
+                    </div>
+                </div>
+
+                <!-- COL DESTRA  -->
+                <div id="left-content" class="col-12 col-md-8">
+                    right
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js" type="module"></script>
