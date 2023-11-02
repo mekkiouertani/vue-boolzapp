@@ -17,8 +17,8 @@
     background: var(--background);
     padding: 20px;
 }
-.h0{
-    height: 0;
+ul{
+    list-style: none;
 }
 
 /*  ---------------
@@ -26,19 +26,34 @@
 #left-bar{
     background-color: var(--color-white);
 }
+/* TOPBAR LEFT */
 #left-bar .col-12:first-child{
     background-color: var(--color-headers);
     height: 70px;
 }
+/* SEZIONE NOTIFICHE */
 #left-bar .col-12:nth-child(2){
     background-color: var(--color-notification);
 }
+/* BARRA DI RICERCA */
 #left-bar .col-12:nth-child(3){
     background-color: var(--color-headers);
 }
+/* CONTATTI */
 #left-bar .col-12 input{
     margin: 5px;
 }
+
+.box-avatar{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.box-avatar img{
+    width: 100%;
+}
+
 
 /*  ----------------
         RIGHT BAR */
