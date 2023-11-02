@@ -24,18 +24,46 @@
                     <div class="row h-100 align-content-start">
                         
                         <!-- top-bar LEFT-->
-                        <div class="col-12">
-                            topbar-left
+                        <div class="col-12 d-flex align-items-center justify-content-between">
+                            
+                            <div class="d-flex">
+                                <div class="box-avatar topbar">
+                                    <img src="img/avatar_io.jpg" alt="contact.name">
+                                </div>
+                                <div class="mx-2">
+                                    <h5 class="mt-2 fw-bolder">Sofia</h5>
+                                </div>
+                            </div>
+                            
+                            <div class="icon-topbar fs-4 text-secondary">
+                                <i class="fa-solid fa-circle-notch px-2"></i>
+                                <i class="fa-solid fa-message px-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical px-2"></i>
+                            </div>
+
                         </div>
 
                         <!-- notifiche -->
-                        <div class="col-12">
-                            notifica
+                        <div class="col-12 d-flex align-items-center">
+                            <span class="align-middle fs-2">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </span>
+                            <div class="mx-3">
+                                <p class="fw-bold m-0">Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#" class="text-secondary">Attiva notifiche desktop</a>
+                            </div>
                         </div>
 
                         <!-- barra di ricerca -->
                         <div class="col-12">
-                            <input type="text">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend align-middle">
+                                  <button class="btn bg-light mt-1" type="button" id="button-addon1">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                                </div>
+                                <input type="text" class="form-control align-middle" placeholder="Inserisci utenti da cercare">
+                              </div>
                         </div>
 
                         <!-- contatti -->
