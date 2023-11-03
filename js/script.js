@@ -14,7 +14,15 @@ const { createApp } = Vue
         methods: {
             selectContact(id){
                 this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id);
-                
+            },
+            sendMessage(){
+                const newMsg = {
+                    date: new Date(),
+                    message: this.message,
+                    status: 'sent'
+                }
+                this.activeContact.messages.push(newMsg),
+                this.message = "";
             },
         },
         computed:{

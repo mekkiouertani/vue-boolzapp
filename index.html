@@ -62,7 +62,7 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                                 </div>
-                                <input type="text" class="form-control mt-1" placeholder="Inserisci utenti da cercare">
+                                <input type="text" class="form-control mt-1" placeholder="Inserisci utenti da cercare" v-model="searchText">
                               </div>
                         </div>
 
@@ -70,7 +70,9 @@
                         <div class="col-12 flex-grow-1 p-0 overflow-y-auto">
                             <ul class="list-group ">
                                 
-                                <li v-for="(contact, index) in contacts" :key="contact.id" :class="{'active': index === activeContactIndex}" class="d-flex border-bottom p-2" @click="selectContact(contact.id)">
+                                <li @click="selectContact(contact.id)" v-for="(contact, index) in contacts" 
+                                :key="contact.id" :class="{'active': index === activeContactIndex}" class="d-flex border-bottom p-2" >
+
                                     <div class="box-avatar">
                                         <img :src="contact.avatar" :alt="contact.name">
                                     </div>
@@ -125,7 +127,7 @@
                         <!-- bottom-bar RIGHT-->
                         <div id="bottom-bar" class="col-12 d-flex align-items-center">
                             <i class="fa-regular fa-face-smile fs-3 mx-3 text-secondary"></i>
-                            <input type="text" class=" form-control flex-grow-1" placeholder=" Scrivi un messaggio">
+                            <input type="text" class=" form-control flex-grow-1" placeholder=" Scrivi un messaggio" v-model="message" @keyup.enter="sendMessage" >
                             <i class="fa-solid fa-paper-plane fs-3 mx-3 text-secondary"></i>
                         </div>
 
