@@ -70,14 +70,14 @@
                         <div class="col-12 flex-grow-1 p-0 overflow-y-auto">
                             <ul class="list-group ">
                                 
-                                <li v-for="(contact, index) in contacts" class="d-flex border-bottom p-2">
+                                <li v-for="(contact, index) in contacts" :key="contact.id" :class="{'active': index === activeContactIndex}" class="d-flex border-bottom p-2" @click="selectContact(contact.id)">
                                     <div class="box-avatar">
                                         <img :src="contact.avatar" :alt="contact.name">
                                     </div>
 
                                     <div class="mx-2">
                                         <h5 class="mt-1">{{contact.name}}</h5>
-                                        <p class="text-secondary">Ultimo messaggio Inviato</p>
+                                        <p class="text-secondary">{{contact.messages[contact.messages.length -1].message}}</p>
                                     </div>
                                 </li>
 
@@ -96,10 +96,10 @@
                             
                             <div class="d-flex mt-3">
                                 <div class="box-avatar topbar">
-                                    <img :src="contacts[0].avatar" :alt="contacts.name">
+                                    <img :src="activeContact.avatar" :alt="activeContact.name">
                                 </div>
                                 <div class="mx-2">
-                                    <h5 class="mt-2 fw-bolder m-0">{{contacts[0].name}}</h5>
+                                    <h5 class="mt-2 fw-bolder m-0">{{activeContact.name}}</h5>
                                     <p class="text-secondary">Ultimo accesso</p>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                         <!-- lettura messaggi -->
                         <div class="col-12 flex-grow-1 overflow-y-auto p-5">
                             
-                            <div class="mt-3 d-flex" v-for="(msg,index) in contacts[activeContactIndex].messages" :key="index">
+                            <div class="mt-3 d-flex" v-for="(msg,index) in activeContact.messages" :key="index">
                                 <span class="position-relative msg" :class="msg.status"> {{msg.message}}
                                     <span class="position-absolute date text-secondary">orario</span>
                                 </span>

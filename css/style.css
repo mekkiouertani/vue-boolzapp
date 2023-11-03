@@ -32,6 +32,7 @@
 /*  ---------------
         LEFT BAR */
 #left-bar{
+    min-width: 400px;
     background-color: var(--color-white);
     max-height: 100%;
 }
@@ -75,12 +76,15 @@
 .box-avatar img{
     width: 100%;
 }
-
+.active{
+    background-color: var(--color-text-grey);
+}
 
 /*  ----------------
         RIGHT BAR */
 #right-content{
     max-height: 100%;
+    max-width: calc(100% - 400px);
 }
 #right-content .col-12:last-child, #right-content  .col-12:first-child{
     background-color: var(--color-headers);

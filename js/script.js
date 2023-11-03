@@ -7,16 +7,22 @@ const { createApp } = Vue
             return{
                 contacts: contactList,
                 activeContactIndex: 0,
-                
+                searchText: "",
+                message: "",
             }
         },
         methods: {
-            
+            selectContact(id){
+                this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id);
+                
+            },
         },
         computed:{
-
+            activeContact(){
+                return this.contacts[this.activeContactIndex]
+            },
         },
         mounted(){
-             console.log(this.contacts);
+            
         }
     }).mount('#app')
