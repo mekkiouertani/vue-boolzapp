@@ -6,7 +6,7 @@ const { createApp } = Vue
         data(){
             return{
                 contacts: contactList,
-                activeContact: 0,
+                activeContactIndex: 0,
                 
             }
         },

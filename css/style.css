@@ -105,10 +105,11 @@
     border-radius: 5px;
 }
 .sent{
+    margin-left: auto;
     background-color: var(--color-sent-message);
 }
 .received{
-
+    margin-right: auto;
     background-color: var(--color-white);
 }
 .date{
