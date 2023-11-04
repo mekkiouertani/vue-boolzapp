@@ -18,10 +18,12 @@ const { createApp } = Vue
             sendMessage(){
                 const newMsg = {
                     date: new Date(),
-                    message: this.message,
+                    message: this.message = this.message.trim(),
                     status: 'sent'
                 }
-                this.activeContact.messages.push(newMsg),
+                if(this.message !== "" && this.message !== " "){
+                    this.activeContact.messages.push(newMsg)
+                }
                 this.message = "";
             },
         },
