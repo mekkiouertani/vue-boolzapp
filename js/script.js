@@ -36,12 +36,17 @@ const { createApp } = Vue
                     this.activeContact.messages.push(newMsgR)
                 },1000)
             },
+            filteredContact(){
+                return this.contacts.filter((contact) => 
+                contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
+            }
             
         },
         computed:{
             activeContact(){
                 return this.contacts[this.activeContactIndex]
             },
+            
         },
         mounted(){
 
