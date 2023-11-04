@@ -32,7 +32,7 @@
 /*  ---------------
         LEFT BAR */
 #left-bar{
-    min-width: 400px;
+    min-width: 350px;
     background-color: var(--color-white);
     max-height: 100%;
 }
@@ -84,7 +84,7 @@
         RIGHT BAR */
 #right-content{
     max-height: 100%;
-    max-width: calc(100% - 400px);
+    max-width: calc(100% - 350px);
 }
 #right-content .col-12:last-child, #right-content  .col-12:first-child{
     background-color: var(--color-headers);
@@ -107,6 +107,7 @@
     text-align: right;
     padding: 15px 30px 15px 10px;
     border-radius: 5px;
+    max-width: 75%;
 }
 .sent{
     margin-left: auto;
@@ -130,3 +131,11 @@ a, li, i, .box-avatar img{
 #left-bar li:hover{
     background-color: var(--color-contact-hover);
 }
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 768px) {
+    #right-content{
+        display: none;
+    }
+ }
