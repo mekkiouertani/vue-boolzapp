@@ -9,6 +9,7 @@ const { createApp } = Vue
                 activeContactIndex: 0,
                 searchText: "",
                 message: "",
+                msgReceived: "Ok!",
             }
         },
         methods: {
@@ -25,6 +26,15 @@ const { createApp } = Vue
                     this.activeContact.messages.push(newMsg)
                 }
                 this.message = "";
+                
+                setTimeout(()=>{
+                    const newMsgR = {
+                        date: new Date(),
+                        message: this.msgReceived,
+                        status: 'received'
+                    }
+                    this.activeContact.messages.push(newMsgR)
+                },1000)
             },
         },
         computed:{
