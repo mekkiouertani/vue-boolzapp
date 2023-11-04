@@ -18,7 +18,7 @@ const { createApp } = Vue
             },
             sendMessage(){
                 const newMsg = {
-                    date: new Date(),
+                    date: dt.now().toFormat('HH:mm'),
                     message: this.message = this.message.trim(),
                     status: 'sent'
                 }
@@ -29,13 +29,14 @@ const { createApp } = Vue
                 
                 setTimeout(()=>{
                     const newMsgR = {
-                        date: new Date(),
+                        date: dt.now().toFormat('HH:mm'),
                         message: this.msgReceived,
                         status: 'received'
                     }
                     this.activeContact.messages.push(newMsgR)
                 },1000)
             },
+            
         },
         computed:{
             activeContact(){
@@ -44,5 +45,6 @@ const { createApp } = Vue
         },
         mounted(){
             
+
         }
     }).mount('#app')
