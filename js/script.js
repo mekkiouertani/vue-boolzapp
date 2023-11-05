@@ -10,6 +10,7 @@ const { createApp } = Vue
                 searchText: "",
                 message: "",
                 msgReceived: "Ok!",
+                dateTime: dt.now(),
             }
         },
         methods: {
@@ -18,7 +19,7 @@ const { createApp } = Vue
             },
             sendMessage(){
                 const newMsg = {
-                    date: dt.now().toFormat('HH:mm'),
+                    date: this.dateTime,
                     message: this.message = this.message.trim(),
                     status: 'sent'
                 }
@@ -29,14 +30,16 @@ const { createApp } = Vue
                 
                 setTimeout(()=>{
                     const newMsgR = {
-                        date: dt.now().toFormat('HH:mm'),
+                        date: this.dateTime,
                         message: this.msgReceived,
                         status: 'received'
                     }
                     if(newMsg.message !== "" ){
                         this.activeContact.messages.push(newMsgR)
+                        this.scrollMessageList()
                     }
                 },1000)
+                
             },
             filteredContact(){
                 return this.contacts.filter((contact) => 
@@ -45,14 +48,19 @@ const { createApp } = Vue
             deleteMessage(index){
                 this.activeContact.messages.splice(index,1);
             },
-           
-            
+            scrollMessageList() {
+                const messageList = this.$refs.messageList;
+                messageList.scrollTop = messageList.scrollHeight;
+            }
             
             
         },
         computed:{
             activeContact(){
                 return this.contacts[this.activeContactIndex]
+            },
+            formattedTime() {
+                return this.dateTime.toFormat('HH:mm'); 
             },
             
         },
