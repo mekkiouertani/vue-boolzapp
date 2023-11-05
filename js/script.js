@@ -10,6 +10,8 @@ const { createApp } = Vue
                 searchText: "",
                 message: "",
                 msgReceived: "Ok!",
+                showInfoMsg: false,
+
             }
         },
         methods: {
@@ -40,6 +42,9 @@ const { createApp } = Vue
                 return this.contacts.filter((contact) => 
                 contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
             },
+            showClickInfoMsg(){
+               this.showInfoMsg = this.showInfoMsg === true ? false : true 
+            }
             
             
         },

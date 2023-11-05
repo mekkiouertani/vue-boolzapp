@@ -68,6 +68,7 @@
     overflow-y: auto;
 }
 .box-avatar{
+    min-width: 70px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -123,8 +124,17 @@
     right: 5px;
     
 }
+.msg:hover i {
+    opacity:50% !important;
+}
+.msg .list-group{
+    min-width: 200px;
+    z-index: 1000;
+    right: 10px;
+}
+
 /* CURSOR POINTER */
-a, li, i, .box-avatar img{
+a, li, i, .box-avatar img, .msg span{
     cursor: pointer;
 }
 /* HOVER */
