@@ -33,7 +33,9 @@ const { createApp } = Vue
                         message: this.msgReceived,
                         status: 'received'
                     }
-                    this.activeContact.messages.push(newMsgR)
+                    if(newMsg.message !== "" ){
+                        this.activeContact.messages.push(newMsgR)
+                    }
                 },1000)
             },
             filteredContact(){
