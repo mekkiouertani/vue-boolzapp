@@ -127,10 +127,10 @@
 .msg:hover i {
     opacity:50% !important;
 }
-.msg .list-group{
-    min-width: 200px;
+.msg .dropdown{
     z-index: 1000;
-    right: 10px;
+    right: 25px;
+    top: 0;
 }
 
 /* CURSOR POINTER */

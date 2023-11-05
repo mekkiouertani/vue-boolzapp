@@ -42,9 +42,12 @@ const { createApp } = Vue
                 return this.contacts.filter((contact) => 
                 contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
             },
-            showClickInfoMsg(){
-               this.showInfoMsg = this.showInfoMsg === true ? false : true 
-            }
+            showClickInfoMsg(index){
+                if(index === this.activeContact.messages){
+                    this.showInfoMsg = this.showInfoMsg === true ? false : true 
+                }
+            },
+            
             
             
         },
