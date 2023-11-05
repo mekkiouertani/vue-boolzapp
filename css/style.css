@@ -51,6 +51,13 @@
     background-color: var(--color-notification);
     height: 70px;
 }
+.rounded-circle{
+    width: 62px;
+    height: 62px;
+}
+.rounded-circle i{
+    color: var(--color-notification);
+}
 /* BARRA DI RICERCA */
 #left-bar .col-12:nth-child(3){
     background-color: var(--color-headers);
@@ -76,6 +83,10 @@
 }
 .box-avatar img{
     width: 100%;
+}
+.box-avatar.topbar{
+    min-width: 50px;
+    min-height: 50px;
 }
 .active{
     background-color: var(--color-text-grey);
