@@ -36,14 +36,18 @@ const { createApp } = Vue
                     }
                     if(newMsg.message !== "" ){
                         this.activeContact.messages.push(newMsgR)
-                        this.scrollMessageList()
+                        
+                        this.$nextTick(() => {
+                            this.scrollMessageList();
+                        });
                     }
                 },1000)
                 
             },
             filteredContact(){
                 return this.contacts.filter((contact) => 
-                contact.name.toLowerCase().includes(this.searchText.toLowerCase()))
+                    contact.name.toLowerCase().includes(this.searchText.toLowerCase())
+                )
             },
             deleteMessage(index){
                 this.activeContact.messages.splice(index,1);
