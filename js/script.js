@@ -1,5 +1,6 @@
 const dt = luxon.DateTime;
 import { contactList } from "./data.js";
+import { sentences } from "./data.js";
 
 const { createApp } = Vue
     createApp({
@@ -9,7 +10,7 @@ const { createApp } = Vue
                 activeContactIndex: 0,
                 searchText: "",
                 message: "",
-                msgReceived: "Ok!",
+                msgReceived: sentences,
                 dateTime: dt.now(),
             }
         },
@@ -31,7 +32,7 @@ const { createApp } = Vue
                 setTimeout(()=>{
                     const newMsgR = {
                         date: this.dateTime,
-                        message: this.msgReceived,
+                        message: this.msgReceived[Math.floor(Math.random() * (this.msgReceived.length -1))],
                         status: 'received'
                     }
                     if(newMsg.message !== "" ){

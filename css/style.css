@@ -108,13 +108,16 @@
     text-align: right;
     padding: 15px 30px 15px 10px;
     border-radius: 5px;
-    max-width: 75%;
+    max-width: 45%;
+    
 }
 .sent{
+    text-align: right;
     margin-left: auto;
     background-color: var(--color-sent-message);
 }
 .received{
+    text-align: left;
     margin-right: auto;
     background-color: var(--color-white);
 }

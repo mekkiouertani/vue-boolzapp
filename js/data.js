@@ -1,3 +1,16 @@
+export const sentences = [
+    "Perché il pollo ha attraversato la strada? Per arrivare dall'altro lato!",
+    "Qual è l'animale più antico? La zebra, perché è in bianco e nero!",
+    "Cosa dice un albero quando cresce? Foglia!",
+    "Qual è il colmo per un elettricista? Fare scintille con qualcuno!",
+    "Cosa fa una mucca durante un terremoto? Una mu-sa!",
+    "Perché gli informatici odiano il mare? Perché non possono staccarsi dal monitor!",
+    "Come fa un programmatore a fare la doccia? Si lava e si asciuga.",
+    "Perché i programmatori non possono mentire? Perché se lo facessero, direbbero 'false'.",
+    "Qual è il cibo preferito dei programmatori? Il byte.",
+    "Cosa dice un programmatore quando esce di casa? 'Sudo a casa'.",
+];
+
 export const contactList= [
     {
         id: 1,
