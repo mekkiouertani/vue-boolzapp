@@ -14,147 +14,147 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="app" tabindex="0">
-        
-        <div class="container h-100">
-            <div class="row h-100">
-                
-                <!-- COL SINISTRA -->
-                <div id="left-bar" class="col-12 col-md-4">
-                    <div class="row h-100 align-content-start">
+<div id="app" tabindex="0">
+    
+    <div class="container h-100">
+        <div class="row h-100">
+            
+            <!-------------------- COL SINISTRA --------------------------------------------->
+            <div id="left-bar" class="col-12 col-md-4 d-md-block" :class="{'d-none': showChat }">
+                <div class="row h-100 align-content-start">
+                    
+                    <!-- top-bar LEFT-->
+                    <div class="col-12 d-flex align-items-center justify-content-between">
                         
-                        <!-- top-bar LEFT-->
-                        <div class="col-12 d-flex align-items-center justify-content-between">
-                            
-                            <div class="d-flex">
-                                <div class="box-avatar topbar mb-1">
-                                    <img src="img/avatar_io.jpg" alt="contact.name">
-                                </div>
-                                <div class="mx-2 ">
-                                    <h5 class="mt-2 fw-bolder">Sofia</h5>
-                                </div>
+                        <div class="d-flex">
+                            <div class="box-avatar topbar mb-1">
+                                <img src="img/avatar_io.jpg" alt="contact.name">
                             </div>
-                            
-                            <div class="icon-topbar fs-4 text-secondary">
-                                <i class="fa-solid fa-circle-notch px-2"></i>
-                                <i class="fa-solid fa-message px-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical px-2"></i>
-                            </div>
-
-                        </div>
-
-                        <!-- notifiche -->
-                        <div class="col-12 d-flex align-items-center">
-                            <span class="align-middle fs-2 bg-light rounded-circle p-2 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-bell-slash"></i>
-                            </span>
-                            <div class="mx-3">
-                                <p class="fw-bold m-0">Ricevi notifiche di nuovi messaggi</p>
-                                <a href="#" class="text-secondary">Attiva notifiche desktop</a>
+                            <div class="mx-2 ">
+                                <h5 class="mt-2 fw-bolder">Sofia</h5>
                             </div>
                         </div>
-
-                        <!-- barra di ricerca -->
-                        <div class="col-12">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend ">
-                                  <button class="btn bg-light mt-1" type="button" id="button-addon1">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                </div>
-                                <input type="text" class="form-control mt-1" placeholder="Inserisci utenti da cercare"
-                                v-model="searchText" >
-                              </div>
-                        </div>
-
-                        <!-- contatti -->
-                        <div class="col-12 flex-grow-1 p-0 overflow-y-auto">
-                            <ul class="list-group ">
-                                
-                                <li @click="selectContact(contact.id)" v-for="(contact, index) in filteredContact()" 
-                                :key="contact.id" :class="{'active': index === activeContactIndex}" class="d-flex align-items-center border-bottom p-2" >
-
-                                    <div class="box-avatar">
-                                        <img :src="contact.avatar" :alt="contact.name">
-                                    </div>
-
-                                    <div class="mx-2">
-                                        <h5 class="mt-1">{{contact.name}}</h5>
-                                        <p class="text-secondary">{{contact.messages[contact.messages.length -1].message}}</p>
-                                    </div>
-                                </li>
-
-                            </ul>
+                        
+                        <div class="icon-topbar fs-4 text-secondary">
+                            <i class="fa-solid fa-circle-notch px-2"></i>
+                            <i class="fa-solid fa-message px-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical px-2"></i>
                         </div>
 
                     </div>
-                </div>
 
-                <!-- COL DESTRA  -->
-                <div id="right-content" class="col-12 col-md-8">
-                    <div class="row h-100 align-content-between">
+                    <!-- notifiche  SINISTRA-->
+                    <div class="col-12 d-flex align-items-center">
+                        <span class="align-middle fs-2 bg-light rounded-circle p-2 d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </span>
+                        <div class="mx-3">
+                            <p class="fw-bold m-0">Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#" class="text-secondary">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
 
-                        <!-- top-bar RIGHT -->
-                        <div class="col-12 d-flex justify-content-between align-items-center">
+                    <!-- barra di ricerca  SINISTRA-->
+                    <div class="col-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend ">
+                                <button class="btn bg-light mt-1" type="button" id="button-addon1">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            </div>
+                            <input type="text" class="form-control mt-1" placeholder="Inserisci utenti da cercare"
+                            v-model.trim="searchText" >
+                            </div>
+                    </div>
+
+                    <!-- contatti col SINISTRA-->
+                    <div class="col-12 flex-grow-1 p-0 overflow-y-auto">
+                        <ul class="list-group ">
                             
-                            <div class="d-flex mt-3">
-                                <div class="box-avatar topbar">
-                                    <img :src="activeContact.avatar" :alt="activeContact.name">
+                            <li @click="selectContact(contact.id)" v-for="(contact, index) in filteredContact()" 
+                            :key="contact.id" :class="{'active': index === activeContactIndex}" class="d-flex align-items-center border-bottom p-2" >
+
+                                <div class="box-avatar">
+                                    <img :src="contact.avatar" :alt="contact.name">
                                 </div>
+
                                 <div class="mx-2">
-                                    <h5 class="mt-2 fw-bolder m-0">{{activeContact.name}}</h5>
-                                    <p class="text-secondary">Ultimo accesso: {{formattedTime}}</p>
+                                    <h5 class="mt-2">{{contact.name}}</h5>
+                                    <span class="text-secondary">{{contact.messages[contact.messages.length -1].message}}</span>
                                 </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!------------------------- COL DESTRA  ----------------------------------------->
+            <div id="right-content" class="col-12 col-md-8  d-md-block" :class="{'d-none': !showChat }">
+                <div class="row h-100 align-content-between">
+
+                    <!-- top-bar RIGHT -->
+                    <div class="col-12 d-flex justify-content-between align-items-center">
+                        
+                        <div class="d-flex mt-3">
+                            <div class="box-avatar topbar">
+                                <img :src="activeContact.avatar" :alt="activeContact.name">
                             </div>
-                            
-                            <div class="icon-topbar fs-4 text-secondary">
-                                <i class="fa-solid fa-magnifying-glass px-2"></i>
-                                <i class="fa-solid fa-paperclip px-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical px-2"></i>
+                            <div class="mx-2">
+                                <h5 class="mt-2 fw-bolder m-0">{{activeContact.name}}</h5>
+                                <p class="text-secondary">Ultimo accesso: {{formattedTime}}</p>
                             </div>
                         </div>
+                        
+                        <div class="icon-topbar fs-4 text-secondary">
+                            <i class="fa-solid fa-arrow-left px-2" @click="showChat = false"></i>
+                            <i class="fa-solid fa-magnifying-glass px-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical px-2"></i>
+                        </div>
+                    </div>
 
-                        <!-- lettura messaggi -->
-                        <div class="col-12 flex-grow-1 overflow-y-auto p-3" ref="messageList">
-                            
-                            <div class="mt-3 d-flex" v-for="(msg,index) in activeContact.messages" :key="index">
-                                <div class="position-relative msg" :class="msg.status" > {{msg.message}} 
-                                    <span class="position-absolute date text-secondary">{{formattedTime}}</span>
-                                    
-                                    <div class="dropdown position-absolute">
-                                        <div  data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-caret-down position-absolute p-3 px-2 top-0  opacity-0"></i>
-                                        </div>
-                                        <ul class="dropdown-menu bg-body-tertiary">
-                                            <li @click="deleteMessage(index)">
-                                                <a class="dropdown-item">
-                                                    Delete Message
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                    <!-- lettura messaggi RIGHT-->
+                    <div class="col-12 flex-grow-1 overflow-y-auto p-3" ref="messageList">
+                        
+                        <div class="mt-3 d-flex" v-for="(msg,index) in activeContact.messages" :key="index">
+                            <div class="position-relative msg" :class="msg.status" > {{msg.message}} 
+                                <span class="position-absolute date text-secondary">{{formattedTime}}</span>
                                 
+                                <div class="dropdown position-absolute">
+                                    <div  data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-caret-down position-absolute p-3 px-2 top-0  opacity-0"></i>
+                                    </div>
+                                    <ul class="dropdown-menu bg-body-tertiary">
+                                        <li @click="deleteMessage(index)">
+                                            <a class="dropdown-item">
+                                                Delete Message
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
+                            
                             </div>
-
-                        </div>
-
-                        <!-- bottom-bar RIGHT-->
-                        <div id="bottom-bar" class="col-12 d-flex align-items-center">
-                            <i class="fa-regular fa-face-smile fs-3 mx-3 text-secondary"></i>
-                            <input type="text" class=" form-control flex-grow-1" placeholder=" Scrivi un messaggio" 
-                            v-model="message" @keyup.enter="sendMessage">
-                            <i class="fa-solid fa-paper-plane fs-3 mx-3 text-secondary"></i>
                         </div>
 
                     </div>
+
+                    <!-- bottom-bar RIGHT-->
+                    <div id="bottom-bar" class="col-12 d-flex align-items-center">
+                        <i class="fa-regular fa-face-smile fs-3 mx-3 text-secondary"></i>
+                        <input type="text" class=" form-control flex-grow-1" placeholder=" Scrivi un messaggio" 
+                        v-model="message" @keyup.enter="sendMessage">
+                        <i class="fa-solid fa-paper-plane fs-3 mx-3 text-secondary"></i>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-
-
     </div>
+
+
+
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

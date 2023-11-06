@@ -74,6 +74,13 @@
     list-style: none;
     overflow-y: auto;
 }
+#left-bar li{
+    max-height: 100px;
+}
+#left-bar li p{
+    max-height: 50px;
+    overflow: hidden;
+}
 .box-avatar{
     min-width: 70px;
     width: 70px;
@@ -156,10 +163,13 @@ a, li, i, .box-avatar img, .msg span{
     background-color: var(--color-contact-hover);
 }
 
-
-/* MEDIA QUERY */
-@media screen and (max-width: 768px) {
+@media screen and  (min-width: 450px){
     #right-content{
-        display: none;
+        max-width: 100%;
     }
- }
+}
+@media screen and  (min-width: 695px){
+    #right-content{
+        max-width: calc(100% - 350px);
+    }
+}

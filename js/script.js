@@ -12,11 +12,13 @@ const { createApp } = Vue
                 message: "",
                 msgReceived: sentences,
                 dateTime: dt.now(),
+                showChat: false,
             }
         },
         methods: {
             selectContact(id){
                 this.activeContactIndex = this.contacts.findIndex((contact)=> contact.id === id);
+                this.showChat = true
             },
             sendMessage(){
                 const newMsg = {
@@ -26,6 +28,10 @@ const { createApp } = Vue
                 }
                 if(this.message !== "" && this.message !== " "){
                     this.activeContact.messages.push(newMsg)
+                    this.$nextTick(() => {
+                        this.scrollMessageList();
+                    });
+                    
                 }
                 this.message = "";
                 
@@ -55,8 +61,11 @@ const { createApp } = Vue
             },
             scrollMessageList() {
                 const messageList = this.$refs.messageList;
-                messageList.scrollTop = messageList.scrollHeight;
-            }
+                messageList.scrollTo({
+                    top: messageList.scrollHeight,
+                    behavior: 'smooth'
+                });
+            },
             
             
         },
@@ -67,7 +76,6 @@ const { createApp } = Vue
             formattedTime() {
                 return this.dateTime.toFormat('HH:mm'); 
             },
-            
         },
         mounted(){
 
